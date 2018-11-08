@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">SBO Editor</string>
+    <string name="beer">Beer</string>
+    <string name="event_map_prompt">Click for Event Venue Map.</string>
+    <string name="sold_out">SOLD\nOUT!</string>
+
+    <string name="small_truck">Small Truck - Pumpkin Patch</string>
+    <string name="beer01_name">1: Ardent - Sweet Potato and Sage</string>
+    <string name="beer02_name">2: Heavy Seas - Greater Pumpkin</string>
+    <string name="beer03_name">3: Isley - Stunt Dubbel</string>
+    <string name="beer04_name">4: Hardywood - \n Farmhouse Pumpkin</string>
+    <string name="beer05_name">5: O\'Connor - Golden Pear</string>
+    <string name="beer06_name">6: Southern Tier - Pumking</string>
+    <string name="beer07_name">7: Ardent - Honey Ginger</string>
+    <string name="beer08_name">8: Lickinghole Creek - Carrot Cake</string>
+    <string name="beer09_name">9: Starr Hill - \n Last Leaf Maple Brown Ale</string>
+    <string name="beer10_name">10: Winchester Cider Works - \n Malice Hard Cider</string>
+    <string name="beer11_name">11: Bold Rock - Blood Orange</string>
+
+    <string name="large_truck">Large Truck</string>
+    <string name="to_be_continued">To be continued&#8230;</string>
+
+
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+</resources>

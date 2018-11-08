@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "889670295610",
+    "firebase_url": "https://sbo-editor.firebaseio.com",
+    "project_id": "sbo-editor",
+    "storage_bucket": "sbo-editor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889670295610:android:bbfb635851b19095",
+        "android_client_info": {
+          "package_name": "com.greskapps.sboeditor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889670295610-912fpcbdn4eaikojv2e7e32cluieatm5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.greskapps.sboeditor",
+            "certificate_hash": "ace957d145c55275ea32ac41aa25303b47c13d2c"
+          }
+        },
+        {
+          "client_id": "889670295610-fkv7ucumjpmv004nk5gov5nfc0lq7kk3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBC4cTlsz7J2zvXo39eTmkzvq8dzD9IX4I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889670295610-fkv7ucumjpmv004nk5gov5nfc0lq7kk3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
