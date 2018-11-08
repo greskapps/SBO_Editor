@@ -63,7 +63,7 @@ public class BeerActivity extends AppCompatActivity {
         checkBox_Beer01.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mBeerDatabaseReference.push().setValue(checkBox_Beer01);
+                mBeerReference.push().setValue(checkBox_Beer01);
                 if (!true) {
                     textView_Beer01.setVisibility(View.VISIBLE);
                 } else {
@@ -83,7 +83,12 @@ public class BeerActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Boolean b = dataSnapshot.getValue(Boolean.class);
-                checkBox_Beer01.isChecked();
+                checkBox_Beer01.setChecked(b);
+                if (b == false) {
+                    textView_Beer01.setVisibility(View.VISIBLE);
+                } else {
+                    textView_Beer01.setVisibility(View.INVISIBLE);
+                }
             }
 
             @Override
