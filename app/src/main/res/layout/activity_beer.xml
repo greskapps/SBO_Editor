@@ -98,8 +98,7 @@
                         android:id="@+id/checkBox_Beer02"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:checked="false" />
+                        android:layout_gravity="center_vertical" />
 
                     <TextView
                         android:id="@+id/soldOut_Beer02"
@@ -110,8 +109,7 @@
                         android:textAlignment="center"
                         android:textColor="@android:color/holo_red_dark"
                         android:textSize="@dimen/textMedium"
-                        android:textStyle="italic"
-                        android:visibility="visible" />
+                        android:textStyle="italic" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -144,8 +142,7 @@
                         android:id="@+id/checkBox_Beer03"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:checked="true" />
+                        android:layout_gravity="center_vertical" />
 
                     <TextView
                         android:id="@+id/soldOut_Beer03"
@@ -156,8 +153,7 @@
                         android:textAlignment="center"
                         android:textColor="@android:color/holo_red_dark"
                         android:textSize="@dimen/textMedium"
-                        android:textStyle="italic"
-                        android:visibility="invisible" />
+                        android:textStyle="italic" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -190,8 +186,7 @@
                         android:id="@+id/checkBox_Beer04"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:checked="true" />
+                        android:layout_gravity="center_vertical" />
 
                     <TextView
                         android:id="@+id/soldOut_Beer04"
@@ -202,8 +197,7 @@
                         android:textAlignment="center"
                         android:textColor="@android:color/holo_red_dark"
                         android:textSize="@dimen/textMedium"
-                        android:textStyle="italic"
-                        android:visibility="invisible" />
+                        android:textStyle="italic" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -236,8 +230,7 @@
                         android:id="@+id/checkBox_Beer05"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:checked="true" />
+                        android:layout_gravity="center_vertical" />
 
                     <TextView
                         android:id="@+id/soldOut_Beer05"
@@ -248,8 +241,7 @@
                         android:textAlignment="center"
                         android:textColor="@android:color/holo_red_dark"
                         android:textSize="@dimen/textMedium"
-                        android:textStyle="italic"
-                        android:visibility="invisible" />
+                        android:textStyle="italic" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -282,8 +274,7 @@
                         android:id="@+id/checkBox_Beer06"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:checked="true" />
+                        android:layout_gravity="center_vertical" />
 
                     <TextView
                         android:id="@+id/soldOut_Beer06"
@@ -294,8 +285,7 @@
                         android:textAlignment="center"
                         android:textColor="@android:color/holo_red_dark"
                         android:textSize="@dimen/textMedium"
-                        android:textStyle="italic"
-                        android:visibility="invisible" />
+                        android:textStyle="italic" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -328,8 +318,7 @@
                         android:id="@+id/checkBox_Beer07"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:checked="true" />
+                        android:layout_gravity="center_vertical" />
 
                     <TextView
                         android:id="@+id/soldOut_Beer07"
@@ -340,8 +329,7 @@
                         android:textAlignment="center"
                         android:textColor="@android:color/holo_red_dark"
                         android:textSize="@dimen/textMedium"
-                        android:textStyle="italic"
-                        android:visibility="invisible" />
+                        android:textStyle="italic" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -374,8 +362,7 @@
                         android:id="@+id/checkBox_Beer08"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:checked="false" />
+                        android:layout_gravity="center_vertical" />
 
                     <TextView
                         android:id="@+id/soldOut_Beer08"
@@ -386,8 +373,7 @@
                         android:textAlignment="center"
                         android:textColor="@android:color/holo_red_dark"
                         android:textSize="@dimen/textMedium"
-                        android:textStyle="italic"
-                        android:visibility="visible" />
+                        android:textStyle="italic" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -420,8 +406,7 @@
                         android:id="@+id/checkBox_Beer09"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:checked="false" />
+                        android:layout_gravity="center_vertical" />
 
                     <TextView
                         android:id="@+id/soldOut_Beer09"
@@ -432,8 +417,7 @@
                         android:textAlignment="center"
                         android:textColor="@android:color/holo_red_dark"
                         android:textSize="@dimen/textMedium"
-                        android:textStyle="italic"
-                        android:visibility="visible" />
+                        android:textStyle="italic" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -466,8 +450,7 @@
                         android:id="@+id/checkBox_Beer10"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:checked="false" />
+                        android:layout_gravity="center_vertical" />
 
                     <TextView
                         android:id="@+id/soldOut_Beer10"
@@ -478,8 +461,7 @@
                         android:textAlignment="center"
                         android:textColor="@android:color/holo_red_dark"
                         android:textSize="@dimen/textMedium"
-                        android:textStyle="italic"
-                        android:visibility="visible" />
+                        android:textStyle="italic" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -512,8 +494,7 @@
                         android:id="@+id/checkBox_Beer11"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:checked="false" />
+                        android:layout_gravity="center_vertical" />
 
                     <TextView
                         android:id="@+id/soldOut_Beer11"
@@ -524,8 +505,7 @@
                         android:textAlignment="center"
                         android:textColor="@android:color/holo_red_dark"
                         android:textSize="@dimen/textMedium"
-                        android:textStyle="italic"
-                        android:visibility="visible" />
+                        android:textStyle="italic" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -558,7 +538,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/header_height"
                 android:background="@android:color/black"
-                android:text="Hardywood Tent - Belmont Ave."
+                android:text="@string/hardywood_tent"
                 android:textAlignment="center"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/textLarge"
@@ -575,7 +555,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/header_height"
                 android:background="@android:color/black"
-                android:text="Fine Creek Tent - Belmont Ave."
+                android:text="@string/fine_creek_tent"
                 android:textAlignment="center"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/textLarge"
