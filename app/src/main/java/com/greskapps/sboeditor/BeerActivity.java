@@ -1,6 +1,9 @@
 package com.greskapps.sboeditor;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -42,6 +45,7 @@ public class BeerActivity extends AppCompatActivity {
     CheckBox checkBox_Beer10;
     CheckBox checkBox_Beer11;
 
+    TextView noInternet;
     TextView textView_Beer01;
     TextView textView_Beer02;
     TextView textView_Beer03;
@@ -61,6 +65,8 @@ public class BeerActivity extends AppCompatActivity {
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mBeerReference = mFirebaseDatabase.getReference().child("availability").child("beer");
+        noInternet = findViewById(R.id.tv_no_internet_connection);
+
         avail_Beer01 = mBeerReference.child("avail_Beer01");
         avail_Beer02 = mBeerReference.child("avail_Beer02");
         avail_Beer03 = mBeerReference.child("avail_Beer03");
@@ -106,323 +112,345 @@ public class BeerActivity extends AppCompatActivity {
                 startActivity(eventScheduleIntent);
             }
         });
-/*
-//  need to hook this up via AsyncTask for Capstone Project
-//  URL for image = https://drive.google.com/file/d/1qVPuPTLxCSXhr7ui1PS5PWIU9dXvyAnB/view
-        eventMap.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("https://drive.google.com/file/d/1qVPuPTLxCSXhr7ui1PS5PWIU9dXvyAnB/view"));
-                startActivity(intent);
-            }});
-*/
 
+    }
+
+
+    private boolean isOnline () {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = cm.getActiveNetworkInfo();
+        return networkInfo != null && networkInfo.isConnectedOrConnecting();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
 
-        avail_Beer01.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Boolean b = dataSnapshot.getValue(Boolean.class);
-                checkBox_Beer01.setChecked(b);
-                if (!b) {
-                    textView_Beer01.setVisibility(View.VISIBLE);
-                } else {
-                    textView_Beer01.setVisibility(View.INVISIBLE);
+        if (isOnline()) {
+            noInternet.setVisibility(View.GONE);
+
+            avail_Beer01.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    Boolean b = dataSnapshot.getValue(Boolean.class);
+                    checkBox_Beer01.setChecked(b);
+                    if (!b) {
+                        textView_Beer01.setVisibility(View.VISIBLE);
+                    } else {
+                        textView_Beer01.setVisibility(View.INVISIBLE);
+                    }
                 }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-            }
-        });
 
-        avail_Beer02.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Boolean b = dataSnapshot.getValue(Boolean.class);
-                checkBox_Beer02.setChecked(b);
-                if (!b) {
-                    textView_Beer02.setVisibility(View.VISIBLE);
-                } else {
-                    textView_Beer02.setVisibility(View.INVISIBLE);
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
                 }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-            }
-        });
+            });
 
-        avail_Beer03.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Boolean b = dataSnapshot.getValue(Boolean.class);
-                checkBox_Beer03.setChecked(b);
-                if (!b) {
-                    textView_Beer03.setVisibility(View.VISIBLE);
-                } else {
-                    textView_Beer03.setVisibility(View.INVISIBLE);
+            avail_Beer02.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    Boolean b = dataSnapshot.getValue(Boolean.class);
+                    checkBox_Beer02.setChecked(b);
+                    if (!b) {
+                        textView_Beer02.setVisibility(View.VISIBLE);
+                    } else {
+                        textView_Beer02.setVisibility(View.INVISIBLE);
+                    }
                 }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-            }
-        });
 
-        avail_Beer04.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Boolean b = dataSnapshot.getValue(Boolean.class);
-                checkBox_Beer04.setChecked(b);
-                if (!b) {
-                    textView_Beer04.setVisibility(View.VISIBLE);
-                } else {
-                    textView_Beer04.setVisibility(View.INVISIBLE);
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
                 }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-            }
-        });
+            });
 
-        avail_Beer05.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Boolean b = dataSnapshot.getValue(Boolean.class);
-                checkBox_Beer05.setChecked(b);
-                if (!b) {
-                    textView_Beer05.setVisibility(View.VISIBLE);
-                } else {
-                    textView_Beer05.setVisibility(View.INVISIBLE);
+            avail_Beer03.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    Boolean b = dataSnapshot.getValue(Boolean.class);
+                    checkBox_Beer03.setChecked(b);
+                    if (!b) {
+                        textView_Beer03.setVisibility(View.VISIBLE);
+                    } else {
+                        textView_Beer03.setVisibility(View.INVISIBLE);
+                    }
                 }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-            }
-        });
 
-        avail_Beer06.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Boolean b = dataSnapshot.getValue(Boolean.class);
-                checkBox_Beer06.setChecked(b);
-                if (!b) {
-                    textView_Beer06.setVisibility(View.VISIBLE);
-                } else {
-                    textView_Beer06.setVisibility(View.INVISIBLE);
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
                 }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-            }
-        });
+            });
 
-        avail_Beer07.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Boolean b = dataSnapshot.getValue(Boolean.class);
-                checkBox_Beer07.setChecked(b);
-                if (!b) {
-                    textView_Beer07.setVisibility(View.VISIBLE);
-                } else {
-                    textView_Beer07.setVisibility(View.INVISIBLE);
+            avail_Beer04.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    Boolean b = dataSnapshot.getValue(Boolean.class);
+                    checkBox_Beer04.setChecked(b);
+                    if (!b) {
+                        textView_Beer04.setVisibility(View.VISIBLE);
+                    } else {
+                        textView_Beer04.setVisibility(View.INVISIBLE);
+                    }
                 }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-            }
-        });
 
-        avail_Beer08.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Boolean b = dataSnapshot.getValue(Boolean.class);
-                checkBox_Beer08.setChecked(b);
-                if (!b) {
-                    textView_Beer08.setVisibility(View.VISIBLE);
-                } else {
-                    textView_Beer08.setVisibility(View.INVISIBLE);
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
                 }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-            }
-        });
+            });
 
-        avail_Beer09.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Boolean b = dataSnapshot.getValue(Boolean.class);
-                checkBox_Beer09.setChecked(b);
-                if (!b) {
-                    textView_Beer09.setVisibility(View.VISIBLE);
-                } else {
-                    textView_Beer09.setVisibility(View.INVISIBLE);
+            avail_Beer05.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    Boolean b = dataSnapshot.getValue(Boolean.class);
+                    checkBox_Beer05.setChecked(b);
+                    if (!b) {
+                        textView_Beer05.setVisibility(View.VISIBLE);
+                    } else {
+                        textView_Beer05.setVisibility(View.INVISIBLE);
+                    }
                 }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-            }
-        });
 
-        avail_Beer10.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Boolean b = dataSnapshot.getValue(Boolean.class);
-                checkBox_Beer10.setChecked(b);
-                if (!b) {
-                    textView_Beer10.setVisibility(View.VISIBLE);
-                } else {
-                    textView_Beer10.setVisibility(View.INVISIBLE);
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
                 }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-            }
-        });
+            });
 
-        avail_Beer11.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Boolean b = dataSnapshot.getValue(Boolean.class);
-                checkBox_Beer11.setChecked(b);
-                if (!b) {
-                    textView_Beer11.setVisibility(View.VISIBLE);
-                } else {
-                    textView_Beer11.setVisibility(View.INVISIBLE);
+            avail_Beer06.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    Boolean b = dataSnapshot.getValue(Boolean.class);
+                    checkBox_Beer06.setChecked(b);
+                    if (!b) {
+                        textView_Beer06.setVisibility(View.VISIBLE);
+                    } else {
+                        textView_Beer06.setVisibility(View.INVISIBLE);
+                    }
                 }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-            }
-        });
 
-
-
-        checkBox_Beer01.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (checkBox_Beer01.isChecked()) {
-                    avail_Beer01.setValue(true);
-                } else {
-                    avail_Beer01.setValue(false);
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
                 }
-            }
-        });
+            });
 
-        checkBox_Beer02.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (checkBox_Beer02.isChecked()) {
-                    avail_Beer02.setValue(true);
-                } else {
-                    avail_Beer02.setValue(false);
+            avail_Beer07.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    Boolean b = dataSnapshot.getValue(Boolean.class);
+                    checkBox_Beer07.setChecked(b);
+                    if (!b) {
+                        textView_Beer07.setVisibility(View.VISIBLE);
+                    } else {
+                        textView_Beer07.setVisibility(View.INVISIBLE);
+                    }
                 }
-            }
-        });
 
-        checkBox_Beer03.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (checkBox_Beer03.isChecked()) {
-                    avail_Beer03.setValue(true);
-                } else {
-                    avail_Beer03.setValue(false);
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
                 }
-            }
-        });
+            });
 
-        checkBox_Beer04.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (checkBox_Beer04.isChecked()) {
-                    avail_Beer04.setValue(true);
-                } else {
-                    avail_Beer04.setValue(false);
+            avail_Beer08.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    Boolean b = dataSnapshot.getValue(Boolean.class);
+                    checkBox_Beer08.setChecked(b);
+                    if (!b) {
+                        textView_Beer08.setVisibility(View.VISIBLE);
+                    } else {
+                        textView_Beer08.setVisibility(View.INVISIBLE);
+                    }
                 }
-            }
-        });
 
-        checkBox_Beer05.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (checkBox_Beer05.isChecked()) {
-                    avail_Beer05.setValue(true);
-                } else {
-                    avail_Beer05.setValue(false);
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
                 }
-            }
-        });
+            });
 
-        checkBox_Beer06.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (checkBox_Beer06.isChecked()) {
-                    avail_Beer06.setValue(true);
-                } else {
-                    avail_Beer06.setValue(false);
+            avail_Beer09.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    Boolean b = dataSnapshot.getValue(Boolean.class);
+                    checkBox_Beer09.setChecked(b);
+                    if (!b) {
+                        textView_Beer09.setVisibility(View.VISIBLE);
+                    } else {
+                        textView_Beer09.setVisibility(View.INVISIBLE);
+                    }
                 }
-            }
-        });
 
-        checkBox_Beer07.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (checkBox_Beer07.isChecked()) {
-                    avail_Beer07.setValue(true);
-                } else {
-                    avail_Beer07.setValue(false);
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
                 }
-            }
-        });
+            });
 
-        checkBox_Beer08.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (checkBox_Beer08.isChecked()) {
-                    avail_Beer08.setValue(true);
-                } else {
-                    avail_Beer08.setValue(false);
+            avail_Beer10.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    Boolean b = dataSnapshot.getValue(Boolean.class);
+                    checkBox_Beer10.setChecked(b);
+                    if (!b) {
+                        textView_Beer10.setVisibility(View.VISIBLE);
+                    } else {
+                        textView_Beer10.setVisibility(View.INVISIBLE);
+                    }
                 }
-            }
-        });
 
-        checkBox_Beer09.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (checkBox_Beer09.isChecked()) {
-                    avail_Beer09.setValue(true);
-                } else {
-                    avail_Beer09.setValue(false);
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
                 }
-            }
-        });
+            });
 
-        checkBox_Beer10.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (checkBox_Beer10.isChecked()) {
-                    avail_Beer10.setValue(true);
-                } else {
-                    avail_Beer10.setValue(false);
+            avail_Beer11.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    Boolean b = dataSnapshot.getValue(Boolean.class);
+                    checkBox_Beer11.setChecked(b);
+                    if (!b) {
+                        textView_Beer11.setVisibility(View.VISIBLE);
+                    } else {
+                        textView_Beer11.setVisibility(View.INVISIBLE);
+                    }
                 }
-            }
-        });
 
-        checkBox_Beer11.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (checkBox_Beer11.isChecked()) {
-                    avail_Beer11.setValue(true);
-                } else {
-                    avail_Beer11.setValue(false);
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
                 }
-            }
-        });
+            });
 
+
+            checkBox_Beer01.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (checkBox_Beer01.isChecked()) {
+                        avail_Beer01.setValue(true);
+                    } else {
+                        avail_Beer01.setValue(false);
+                    }
+                }
+            });
+
+            checkBox_Beer02.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (checkBox_Beer02.isChecked()) {
+                        avail_Beer02.setValue(true);
+                    } else {
+                        avail_Beer02.setValue(false);
+                    }
+                }
+            });
+
+            checkBox_Beer03.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (checkBox_Beer03.isChecked()) {
+                        avail_Beer03.setValue(true);
+                    } else {
+                        avail_Beer03.setValue(false);
+                    }
+                }
+            });
+
+            checkBox_Beer04.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (checkBox_Beer04.isChecked()) {
+                        avail_Beer04.setValue(true);
+                    } else {
+                        avail_Beer04.setValue(false);
+                    }
+                }
+            });
+
+            checkBox_Beer05.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (checkBox_Beer05.isChecked()) {
+                        avail_Beer05.setValue(true);
+                    } else {
+                        avail_Beer05.setValue(false);
+                    }
+                }
+            });
+
+            checkBox_Beer06.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (checkBox_Beer06.isChecked()) {
+                        avail_Beer06.setValue(true);
+                    } else {
+                        avail_Beer06.setValue(false);
+                    }
+                }
+            });
+
+            checkBox_Beer07.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (checkBox_Beer07.isChecked()) {
+                        avail_Beer07.setValue(true);
+                    } else {
+                        avail_Beer07.setValue(false);
+                    }
+                }
+            });
+
+            checkBox_Beer08.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (checkBox_Beer08.isChecked()) {
+                        avail_Beer08.setValue(true);
+                    } else {
+                        avail_Beer08.setValue(false);
+                    }
+                }
+            });
+
+            checkBox_Beer09.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (checkBox_Beer09.isChecked()) {
+                        avail_Beer09.setValue(true);
+                    } else {
+                        avail_Beer09.setValue(false);
+                    }
+                }
+            });
+
+            checkBox_Beer10.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (checkBox_Beer10.isChecked()) {
+                        avail_Beer10.setValue(true);
+                    } else {
+                        avail_Beer10.setValue(false);
+                    }
+                }
+            });
+
+            checkBox_Beer11.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (checkBox_Beer11.isChecked()) {
+                        avail_Beer11.setValue(true);
+                    } else {
+                        avail_Beer11.setValue(false);
+                    }
+                }
+            });
+
+
+        } else {
+            noInternet.setVisibility(View.VISIBLE);
+/*
+            final Toast tag = Toast.makeText(getBaseContext(), R.string.no_internet_connection ,Toast.LENGTH_SHORT);
+            tag.show();
+            new CountDownTimer(4000, 1000)
+            {
+                public void onTick(long millisUntilFinished) {tag.show();}
+                public void onFinish() {tag.show();}
+            }.start();
+            */
+        }
 
     }
-
 }

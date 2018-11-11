@@ -2,7 +2,10 @@
     <string name="app_name">SBO Editor</string>
     <string name="beer">Beer</string>
     <string name="event_map_prompt">Click for Event Venue Map.</string>
+    <string name="no_internet_connection">No internet connection detected!  Please connect online to change beer status!</string>
+    <string name="checkbox_descriptor">Checkbox</string>
     <string name="sold_out">SOLD\nOUT!</string>
+    <string name="out">OUT!</string>
 
     <string name="small_truck">Small Truck - Pumpkin Patch</string>
     <string name="beer01_name">1: Ardent - Sweet Potato and Sage</string>
@@ -35,5 +38,12 @@
     <string name="error_field_required">This field is required</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
+
     </string>
+    <string name="appwidget_text">Beer status:</string>
+    <string name="add_widget">Add widget</string>
+    <string name="beer04_name_widget">4: Hardywood - Farmhouse Pumpkin</string>
+    <string name="beer09_name_widget">9: Starr Hill - Last Leaf M. Brown Ale</string>
+    <string name="beer10_name_widget">10: Winchester C. W. - Malice H. C.</string>
+
 </resources>
