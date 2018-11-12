@@ -1,244 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:background="#1fbff4"
+android:padding="@dimen/widget_margin"
+android:id="@+id/widget_layout">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="36dp"
-        android:background="@android:color/black"
-        android:text="Large Truck"
-        android:textAlignment="center"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/textLarge"
-        android:textStyle="bold" />
+<TextView
+    android:id="@+id/appwidget_text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/appwidget_text"
+    android:text="@string/event_map_prompt"
+    android:textColor="#ffffff"
+    android:textSize="@dimen/textMedium"
+    android:textStyle="bold|italic"
+    android:padding="@dimen/paddingSmall"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+<ImageView
+    android:id="@+id/imageView"
+    android:layout_width="240dp"
+    android:layout_height="180dp"
+    app:srcCompat="@drawable/oktoberfest_2018_map" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="@dimen/paddingSmall">
-
-            <CheckBox
-                android:id="@+id/checkBox_Beer13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:checked="false" />
-
-            <TextView
-                android:id="@+id/soldOut_Beer13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/paddingSmall"
-                android:text="@string/sold_out"
-                android:textAlignment="center"
-                android:textColor="@android:color/holo_red_dark"
-                android:textSize="@dimen/textMedium"
-                android:textStyle="italic"
-                android:visibility="visible" />
-
-            <TextView
-                android:id="@+id/number_Beer13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text=" 13"
-                android:textSize="@dimen/textMedium" />
-
-            <TextView
-                android:id="@+id/name_Beer13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="/14: Spaten - Oktoberfest"
-                android:textSize="@dimen/textMedium" />
-        </LinearLayout>
-    </LinearLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray" />
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="@dimen/paddingSmall">
-
-            <CheckBox
-                android:id="@+id/checkBox_Beer15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:checked="true"
-                android:clickable="true" />
-
-            <TextView
-                android:id="@+id/soldOut_Beer15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/paddingSmall"
-                android:text="@string/sold_out"
-                android:textAlignment="center"
-                android:textColor="@android:color/holo_red_dark"
-                android:textSize="@dimen/textMedium"
-                android:textStyle="italic"
-                android:visibility="invisible" />
-
-            <TextView
-                android:id="@+id/number_Beer15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text=" 15"
-                android:textSize="@dimen/textMedium" />
-
-            <TextView
-                android:id="@+id/name_Beer15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text=": CotU - Oktoberfest"
-                android:textSize="@dimen/textMedium" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="3dp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="@dimen/paddingSmall">
-
-            <CheckBox
-                android:id="@+id/checkBox_Beer16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:checked="false" />
-
-            <TextView
-                android:id="@+id/soldOut_Beer16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/paddingSmall"
-                android:text="@string/sold_out"
-                android:textAlignment="center"
-                android:textColor="@android:color/holo_red_dark"
-                android:textSize="@dimen/textMedium"
-                android:textStyle="italic"
-                android:visibility="visible" />
-
-            <TextView
-                android:id="@+id/number_Beer16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text=" 16"
-                android:textSize="@dimen/textMedium" />
-
-            <TextView
-                android:id="@+id/name_Beer16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text=": Devils Backbone - O'Fest"
-                android:textSize="@dimen/textMedium" />
-        </LinearLayout>
-    </LinearLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray" />
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="@dimen/paddingSmall">
-
-            <CheckBox
-                android:id="@+id/checkBox_Beer17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:checked="true"
-                android:clickable="true" />
-
-            <TextView
-                android:id="@+id/soldOut_Beer17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/paddingSmall"
-                android:text="@string/sold_out"
-                android:textAlignment="center"
-                android:textColor="@android:color/holo_red_dark"
-                android:textSize="@dimen/textMedium"
-                android:textStyle="italic"
-                android:visibility="invisible" />
-
-            <TextView
-                android:id="@+id/number_Beer17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text=" 17"
-                android:textSize="@dimen/textMedium" />
-
-            <TextView
-                android:id="@+id/name_Beer17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text=": Legend - Oktoberfest"
-                android:textSize="@dimen/textMedium" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray" />
 
 </LinearLayout>
-
-

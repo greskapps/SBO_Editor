@@ -126,7 +126,10 @@ public class BeerActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        if (isOnline()) {
+        if (!isOnline()) {
+            noInternet.setVisibility(View.VISIBLE);
+
+        } else {
             noInternet.setVisibility(View.GONE);
 
             avail_Beer01.addValueEventListener(new ValueEventListener() {
@@ -438,18 +441,6 @@ public class BeerActivity extends AppCompatActivity {
                 }
             });
 
-
-        } else {
-            noInternet.setVisibility(View.VISIBLE);
-/*
-            final Toast tag = Toast.makeText(getBaseContext(), R.string.no_internet_connection ,Toast.LENGTH_SHORT);
-            tag.show();
-            new CountDownTimer(4000, 1000)
-            {
-                public void onTick(long millisUntilFinished) {tag.show();}
-                public void onFinish() {tag.show();}
-            }.start();
-            */
         }
 
     }

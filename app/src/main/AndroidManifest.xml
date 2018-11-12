@@ -33,6 +33,7 @@
                 android:value=".BeerActivity" />
         </activity>
 
+        <service android:name=".AppWidgetJobService" />
         <receiver android:name=".AppWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />

@@ -7,6 +7,8 @@
     <dimen name="header_height">36dp</dimen>
     <dimen name="image_icon_side">48dp</dimen>
     <dimen name="image_side">88dp</dimen>
+    <dimen name="map_icon_height">180dp</dimen>
+    <dimen name="map_icon_width">240dp</dimen>
     <dimen name="paddingMedium">8dp</dimen>
     <dimen name="paddingSmall">4dp</dimen>
     <dimen name="textLarge">24sp</dimen>
