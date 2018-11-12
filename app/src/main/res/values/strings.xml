@@ -3,8 +3,9 @@
     <string name="beer">Beer</string>
     <string name="event_map_prompt">Click for Event Venue Map.</string>
     <string name="no_internet_connection">No internet connection detected!  Please connect online to change beer status!</string>
-    <string name="checkbox_descriptor">Checkbox</string>
+    <string name="checkbox_descriptor">Checkbox description</string>
     <string name="sold_out">SOLD\nOUT!</string>
+    <string name="sold_out_descriptor">text view for sold out status</string>
     <string name="out">OUT!</string>
 
     <string name="small_truck">Small Truck - Pumpkin Patch</string>

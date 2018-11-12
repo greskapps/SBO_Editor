@@ -1,7 +1,7 @@
 package com.greskapps.sboeditor;
 
-import android.app.job.JobParameters;
-import android.app.job.JobService;
+import com.firebase.jobdispatcher.JobParameters;
+import com.firebase.jobdispatcher.JobService;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.support.annotation.NonNull;
