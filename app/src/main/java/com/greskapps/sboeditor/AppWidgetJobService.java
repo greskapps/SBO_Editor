@@ -42,7 +42,7 @@ public class AppWidgetJobService extends JobService {
         ComponentName widget = new ComponentName(this, AppWidget.class);
         AppWidgetManager manager = AppWidgetManager.getInstance(this);
         int[] appWidgetIds = manager.getAppWidgetIds(widget);
-        AppWidget.updateAllWidgets(this, manager, appWidgetIds);
+        AppWidget.updateAllWidgets(this, manager, appWidgetIds, beerStatus);
     }
 
     @Override
