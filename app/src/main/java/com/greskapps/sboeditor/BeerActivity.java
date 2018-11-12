@@ -63,7 +63,7 @@ public class BeerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beer);
 
-        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        mFirebaseDatabase = FBRealtimeDatabaseUtils.getDatabase();
         mBeerReference = mFirebaseDatabase.getReference().child("availability").child("beer");
         noInternet = findViewById(R.id.tv_no_internet_connection);
 
@@ -114,7 +114,6 @@ public class BeerActivity extends AppCompatActivity {
         });
 
     }
-
 
     private boolean isOnline () {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
