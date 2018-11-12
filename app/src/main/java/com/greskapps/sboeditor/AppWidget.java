@@ -5,10 +5,19 @@ import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.widget.RemoteViews;
 
+import com.firebase.jobdispatcher.FirebaseJobDispatcher;
+import com.firebase.jobdispatcher.GooglePlayDriver;
+import com.firebase.jobdispatcher.Job;
+import com.firebase.jobdispatcher.Lifetime;
+import com.firebase.jobdispatcher.RetryStrategy;
+import com.firebase.jobdispatcher.Trigger;
+
 /**
  * Implementation of App Widget functionality.
  */
 public class AppWidget extends AppWidgetProvider {
+
+    private FirebaseJobDispatcher mJobDispatcher;
 
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
@@ -31,11 +40,18 @@ public class AppWidget extends AppWidgetProvider {
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
-        // There may be multiple widgets active, so update all of them
-        for (int appWidgetId : appWidgetIds) {
-            updateAppWidget(context, appWidgetManager, appWidgetId);
+        mJobDispatcher = new FirebaseJobDispatcher(new GooglePlayDriver(context));
+        Job job = mJobDispatcher.newJobBuilder()
+                .setService(AppWidgetJobService.class)
+                .setTag(AppWidgetJobService.class.getSimpleName())
+                .setLifetime(Lifetime.UNTIL_NEXT_BOOT)
+                .setRecurring(false)
+                .setRetryStrategy(RetryStrategy.DEFAULT_LINEAR)
+                .setReplaceCurrent(true)
+                .setTrigger(Trigger.executionWindow(0, 900))
+                .build();
+        mJobDispatcher.mustSchedule(job);
         }
-    }
 
     @Override
     public void onEnabled(Context context) {
